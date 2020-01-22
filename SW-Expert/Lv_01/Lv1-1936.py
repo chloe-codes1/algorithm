@@ -9,4 +9,20 @@
 # A가 이기면 A, B가 이기면 B를 출력한다
 
 
-num
+inputs = input().split(' ')
+result = ''
+
+A = int(inputs[0])
+B = int(inputs[1])
+
+
+if A == 3 and B == 1:
+    result += 'B'
+elif A> B:
+    result += 'A'
+elif A <B:
+    result += 'B'
+
+print(result)
+
+
