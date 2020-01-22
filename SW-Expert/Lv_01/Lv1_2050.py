@@ -15,3 +15,10 @@
 
 # 각 알파벳을 숫자로 변환한 결과값을 빈 칸을 두고 출력한다.
 
+
+alpabets = input()
+
+if len(alpabets) <=200:
+    for i in alpabets:
+        print(ord(i)-64,end=' ')
+

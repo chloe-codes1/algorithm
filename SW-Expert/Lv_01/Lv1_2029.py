@@ -19,3 +19,9 @@
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
 
+T = int(input())
+
+for i in range(1,T+1):
+    a, b = map(int, input().split(' '))
+    quotient, remainder = divmod(a,b)
+    print(f'#{i} {quotient} {remainder}')
