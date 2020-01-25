@@ -44,3 +44,20 @@
 # 각 줄은 '#t'로 시작하고, 다음 줄부터 원본 문서를 출력한다.
 
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+T = int(input())
+
+for i in range(1, T+1):
+    print('#{}'.format(i))
+    N = int(input())
+    result = ''
+    for _ in range(N):
+        alpabet, times = input().split()
+        result += alpabet * int(times)
+    for index, i in enumerate(result, start =1):
+        print(i, end='')
+        if not index %10:
+            print()
+    print()
+        
