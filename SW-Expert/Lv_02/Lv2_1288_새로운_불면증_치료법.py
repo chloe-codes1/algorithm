@@ -33,15 +33,31 @@
 
 # ( 민석이는 xN번 양을 세고 있다. )
 
+
 T = int(input())
 
 for i in range(1,T+1):
     N = int(input())
 
-    numbers = [0,1,2,3,4,5,6,7,8,9]
+    numbers = [0]*10
 
-    while True:
-        x = 1
-        result = []
-        result.append( str(N * x).split()) 
+    count = 0
+
+    while sum(numbers) != 10:
+        num = N * (count+1)
+        while num >0:
+            num, remainder = divmod(num, 10)
+            numbers[remainder] = 1
+        count +=1
+    print("#{} {}".format(i, N * count))
+
+
+
+
+
+
+
+
+        
+
     

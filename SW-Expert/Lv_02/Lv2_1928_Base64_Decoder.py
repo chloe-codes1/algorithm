@@ -20,3 +20,12 @@
 # [출력]
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import base64
+
+T = int(input())
+
+for i in range(1,T+1):
+    data = input().encode()
+    print('#{0} {1}'.format(i,base64.b64decode(data).decode('utf-8')))
+

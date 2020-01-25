@@ -44,3 +44,28 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+T = int(input())
+
+for i in range(1,T+1):
+    N = int(input())
+    distance = 0
+    speed = 0
+    for n in range(N):
+        commands = input()
+
+        if len(commands) > 1:
+            data = commands.split(' ')
+            if int(data[0]) == 1:
+                speed += int(data[1])
+            elif int(data[0]) ==2:
+                if speed > 1:    
+                    speed -= int(data[1])
+
+            distance += speed
+        else:
+            distance += speed
+
+    print('#{0} {1}'.format(i, distance))
+
+
