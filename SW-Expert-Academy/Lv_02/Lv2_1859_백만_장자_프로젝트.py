@@ -38,5 +38,11 @@ T = int(input())
 for t in range(1, T+1):
     N = int(input())
     prices = list(map(int, input().split()))
-    
-    result = 
+    max_price = prices[-1]
+    total = 0
+    for i in range(N-1, -1, -1):
+        if max_price < prices[i]:
+            max_price = prices[i]
+        else:
+            total += max_price - prices[i]
+    print('#{0} {1}'.format(t,total))
