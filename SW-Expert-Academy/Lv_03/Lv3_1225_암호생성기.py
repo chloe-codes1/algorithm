@@ -35,14 +35,14 @@ for t in range(T):
     while True:
         result = False
         for i in range(5):
-            if 0 in data:
+            data[0] = data[0] -i-1
+            new_data = data[1:]
+            new_data.append(data[0])
+            data = new_data[:]
+            if data[-1] <= 0:
+                data[-1] =0
                 result = True
-            data[i] = data[i] -1
-        
-        new_data = data[1:]
-        new_data.append(data[0])
-        data = new_data[:]
-        
-        if result = True:
+                break    
+        if result:
             break
     print('#{} {}'.format(case, ' '.join(map(str,data))))
