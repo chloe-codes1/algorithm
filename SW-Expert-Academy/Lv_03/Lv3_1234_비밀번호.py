@@ -23,9 +23,29 @@
 
 # #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답(비밀번호)을 출력한다.
 
-T =10
+T = 10
 
 for t in range(T):
-    count, data = map(str, input().split())
+    length, data = input().split()
+    length = int(length)
+    data = list(data)
+
+
+    while True:
+        found = False
+        i = 1
+        while i < length:
+            if data[i] == data[i-1]:
+                data = data[:i-1]+ data[i+1:]
+                length -=2
+                found = True
+            else:
+                i += 1
+
+        if not found:
+            break    
+    
+    print(data)
+
 
     
