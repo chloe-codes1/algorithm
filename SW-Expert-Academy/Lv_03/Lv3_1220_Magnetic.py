@@ -36,26 +36,26 @@
 # #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 교착 상태의 개수를 출력한다.
 
 
-for t in range(10):
+for t in range(1,11):
     side = int(input())
     table = [[]* s for s in range(side)]
     for s in range(side):
         table[s] = list(map(int, input().split()))
 
-    count = 100
+ 
+    result =0
 
-    result = False
     for i in range(side):
+        save = 0
         for j in range(side):
-            if table[i][j] == 1:
-                for k in range(side - i):
-                    if i + k < side:
-                        if table[i+k][j] !=2:
-                            result = True
-        if result:
-            count -= 1       
-
-    print(count)
+            found = table[j][i]
+            if found == 1:
+                save = found
+            if save == 1 and found ==2:
+                save = 0
+                result +=1
+               
+    print('#{} {}'.format(t ,result))
 
     
     

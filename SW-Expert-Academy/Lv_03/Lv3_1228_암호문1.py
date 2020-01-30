@@ -23,6 +23,8 @@
 # [출력]
 
 # #기호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 수정된 암호문의 처음 10개 항을 출력한다.
+
+
 T = 10
 for t in range(1, T+1):
     length = int(input())
@@ -30,7 +32,14 @@ for t in range(1, T+1):
     number = int(input())
     command = list(map(str, input().split()) )
 
+    start = 0
+
     for i in range(number):
-        cryptogram.insert(int(command[1])+1, ' '.join(command[3:]))
-    
-    print('#{} {}'.format(t, ' '.join(cryptogram[:10])))
+        cryptogram = cryptogram[: int(command[start+1])]  + command[start + 3: start + int(command[start+2]) +3 ] + cryptogram[int(command[start+1] ):]
+        start += int(command[start + 2]) +3
+
+
+    print('#{}'.format(t) ,*cryptogram[:10])
+
+
+  
