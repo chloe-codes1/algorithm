@@ -23,29 +23,32 @@
 
 # #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답(비밀번호)을 출력한다.
 
+
+
 T = 10
 
-for t in range(T):
+for t in range(1,T+1):
     length, data = input().split()
     length = int(length)
     data = list(data)
 
 
     while True:
-        found = False
+        gotcha = False
         i = 1
         while i < length:
             if data[i] == data[i-1]:
                 data = data[:i-1]+ data[i+1:]
                 length -=2
-                found = True
+                gotcha = True
             else:
                 i += 1
 
-        if not found:
+        if not gotcha:
             break    
     
-    print(data)
+
+    print('#{} {}'.format(t, ''.join(data)))
 
 
     
