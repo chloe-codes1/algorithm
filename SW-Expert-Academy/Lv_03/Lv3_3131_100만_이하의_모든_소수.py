@@ -10,15 +10,14 @@
 
 # 1 이상 100만 이하의 소수를 공백을 사이에 두고 한 줄에 모두 출력한다.
 
-import math
-
 def find_all_primes(n):
-    sieve = [True] *n
-    
-    i = 2
-    while i<= int(math.sqrt(n)):
-        
+    if n < 2:
+        return []
+    s = [0, 0] + [1] * (n - 1)
+    for i in range(2, int(n**.5)+1):
+        if s[i]:
+            s[i*2::i] = [0] * ((n - i)//i)
+    return [i for i, v in enumerate(s) if v]
 
 
-
-print(*find_all_primes(13))
+print(*find_all_primes(1000000))

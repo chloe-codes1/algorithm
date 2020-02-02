@@ -44,10 +44,65 @@
 # 따라서 결과값으로 Impossible 출력한다.
 
 
+
+
+
+# ver 1) Got 997 out of 1000 in test case...
+
+# T = int(input())
+
+# for t in range(1, T+1):
+#     person, second, number = (map(int,input().split()))
+#     arrival = list(map(int, input().split()))
+    
+#     result = 'Possible'
+#     if second > min(arrival):
+#         result = 'Impossible'
+    
+#     else:
+#         count = second * number
+#         current = min(arrival)
+#         last_person = max(arrival)
+
+#         while True:
+#             if len(arrival) == 0:
+#                 break
+#             while second <= last_person:
+#                 if current == last_person:
+#                     arrival.clear()
+#                     break
+#                 if arrival.count(current) > count:
+#                     result = 'Impossible'
+#                     arrival.clear()
+#                     break
+#                 if count < len(arrival):
+#                     break
+#                 count -= arrival.count(current)
+#                 arrival = list(filter(lambda x: x!= current, arrival))
+#                 current = min(arrival)
+#             count += second*number
+            
+#     print('#{} {}'.format(t, result))
+
+
+
+
+
+# ver 2)
+
 T = int(input())
 
 for t in range(1, T+1):
-    person, second, number = input().split()
-    arrival = list(map(int, input().split()))
-    
-    print('max? =>',max(arrival))
+    person, second, number = (map(int,input().split()))
+    arrivals = list(map(int, input().split()))
+    result = 'Possible'
+    for arrival in arrivals:
+        bread =0
+        for current_arrival in arrivals:
+            if current_arrival <= arrival:
+                bread +=1
+        if (arrival//second) * number < bread:
+            result = 'Impossible'
+            break
+
+    print('#{} {}'.format(t, result))
