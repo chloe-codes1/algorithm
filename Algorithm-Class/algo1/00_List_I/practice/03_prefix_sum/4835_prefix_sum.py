@@ -1,5 +1,3 @@
-
-
 T = int(input())
 
 for t in range(1, T+1):
@@ -8,16 +6,14 @@ for t in range(1, T+1):
     M = int(M)
 
     numbers =list( map(int, input().split()))
-
     
     max_sum = 0
-    min_sum = 10000000
+    min_sum = 1000000
 
     for i in range(N-M+1):
         count = 0
         for j in range(M):
             count += numbers[i+j]
-
 
         if count < min_sum:
             min_sum = count

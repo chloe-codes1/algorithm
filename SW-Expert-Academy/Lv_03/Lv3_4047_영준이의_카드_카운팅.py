@@ -41,6 +41,7 @@ for t in range(1, T+1):
         if data[i] in 'SDHC':
             inHand.append(data[i:i+3])
 
+
     status = True
     if len(set(inHand)) <4:
             deck.clear()
