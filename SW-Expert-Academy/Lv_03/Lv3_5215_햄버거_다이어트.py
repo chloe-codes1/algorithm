@@ -34,28 +34,59 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 주어진 제한 칼로리 이하의 조합중에서 가장 맛에 대한 점수가 높은 햄버거의 점수를 출력한다.
 
 
+
+
+# ver1)
+
+
+# T = int(input())
+# for t in range(1, T+1):
+#     kinds, limit = map(int, input().split())
+
+#     options = sorted([list( map(int, input().split())) for _ in range(kinds)])
+
+#     for i in range(kinds):
+#         options[i].insert(0, options[i][1] / options[i][0])
+
+#     options = sorted(options)
+
+
+
+#     favs = []
+#     cal = 0
+
+#     for i in range(kinds):
+        
+#         if cal + options[i][2] <= limit:
+#             favs.append( options[i][1])
+#             cal += options[i][2]
+
+#     print('#{} {}'.format(t,sum(favs)))
+
+        
+
+
+# ver 2)
+
 T = int(input())
+f = []
 for t in range(1, T+1):
-    kinds, limit = map(int, input().split())
-
-    options = sorted([list( map(int, input().split())) for _ in range(kinds)])
-
-    for i in range(kinds):
-        options[i].insert(0, options[i][1] / options[i][0])
-
-    print(sorted(options))
-
-
-
-    favs = []
-    cal = 0
-
-    # for i in range(-1, -kinds -1, -1):
-        
-    #     if cal + options[i][1] <= limit:
-    #         favs.append( options[i])
-    #         cal += options[i][1]
-
-
-        
-        
+    N, L = list(map(int, input().split()))
+    sous = []
+    for i in range(N):
+        like, price = list(map(int, input().split()))
+        sous.append((like, price))
+    result = {}
+    for j in range(1<<N):
+        likes = 0
+        prices = 0
+        for z in range(N):
+            if j&(1<<z):
+                likes += sous[z][0]
+                prices += sous[z][1]
+        if prices > L:
+            pass
+        else :
+            result[likes] = prices
+    f.append((f"#{t} {max(result.keys())}"))
+print("\n".join(f))

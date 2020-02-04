@@ -29,32 +29,64 @@
 # j번째 정수는 Cj번 버스 정류장을 지나는 버스 노선의 개수여야 한다.
 
 
+
+
+# ver1) Input sample은 통과하나, 제출하면 runtime error남
+
+# T = int(input())
+# for t in range(1, T+1):
+#     lines = int(input())
+
+#     line_info = []
+
+#     for l in range(lines):
+#         line_info += list(map(int, input().split()))
+
+#     stops = int(input())
+
+#     stop_info = {}
+#     for s in range(stops):
+#         stop_info.update( { int(input()) : 0 })
+
+#     for i in range(lines *2 -1):
+        
+#         for j in range(line_info[i], line_info[i+1]  +1):
+#             stop_info[j] +=1
+
+    
+#     result = []
+
+#     for val in stop_info.values():
+#         result.append(val)
+
+    
+#     print('#{}'.format(t), *result )
+
+
+
+# ver2)
+
 T = int(input())
 for t in range(1, T+1):
     lines = int(input())
 
-    line_info = []
+    line_info = [0] *5000
 
     for l in range(lines):
-        line_info += list(map(int, input().split()))
+        A, B = map(int, input().split())
+        for i in range(A -1, B):
+            line_info[i] += 1
+
 
     stops = int(input())
-
-    stop_info = {}
+    stop_info = []
     for s in range(stops):
-        new_stop = int(input())
-        if new_stop not in stop_info.keys():
-            stop_info.update( { new_stop : 0 })
+        stop_info.append(int(input()))
 
-    for i in range(lines *2 -1):
-        for j in range(line_info[i], line_info[i+1]  +1):
-            stop_info[j] +=1
-
-    
     result = []
 
-    for val in stop_info.values():
-        result.append(val)
+    for stop in stop_info:
+        result.append(line_info[stop-1])
 
     
     print('#{}'.format(t), *result )

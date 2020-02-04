@@ -44,57 +44,17 @@ for t in range(1, T+1):
 
 
     first = [ m for m in m_screw if m not in f_screw]
-    last = [f for f in f_screw if f not in m_screw]
+    final = [ f for f in f_screw if f not in m_screw]
 
+    result = first
 
-    first_idx = m_screw.index(first[0])
-    first.append( f_screw[first_idx])
-    m_screw.pop(first_idx)
-    f_screw.pop(first_idx)
-
-    last_idx = f_screw.index(last[0])
-    last.insert( 0, m_screw [last_idx])
-    m_screw.pop(last_idx)
-    f_screw.pop(last_idx)
-
-
-    print(first)
-    print(last)
-    print(m_screw)
-    print(f_screw)
 
     while True:
-        if len(m_screw) == 0 or len(f_screw) ==0:
+        index = m_screw.index(result[-1])
+        screw = f_screw[index]
+        result.append(screw)
+        result.append(screw)
+        if screw == final[0]:
             break
-
-        for i in range(len(m_screw)):
-            if m_screw[i] == first[-1]:
-                first.append(m_screw[i])
-                first.append(f_screw[i])
-                m_screw.pop(i)
-                f_screw.pop(i)
-    
-    result = first + last
-    print(result)
-
-
-
-    
-
-
-
-
-    # for i in range(len(screws) -3):
-    #     if screws[i] == first[0] and screws[i+1] ==first[1]:
-    #         print('롸?')
-    #         screws.pop(i)
-    #         screws.pop(i)
         
-    #     if screws[i] == last[0] and screws[i+1] ==last[1]:
-    #         screws.pop(i)
-    #         screws.pop(i)
-
-    # print(screws)
-
-
-
+    print('#{}'.format(t), *result)
