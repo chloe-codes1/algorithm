@@ -43,16 +43,19 @@ for t in range(1, T+1):
 
 
     status = True
-    if len(set(inHand)) <4:
-            deck.clear()
-            deck.update({'result' : 'ERROR'})
-            status = False
-    else:
-        for h in inHand:
 
-            if h[0] in deck.keys():
-                if 1 <= int(h[1:]) <=13:
-                    deck[h[0]] -= 1
+    check = []
+
+    for hand in inHand:
+        if hand in check:
+            status = False
+            break
+        check.append(hand)
+
+    for hand in inHand:    
+        if hand[0] in deck.keys():
+            if 1 <= int(hand[1:]) <=13:
+                deck[hand[0]] -= 1      
 
     if status:
         print('#{}'.format(t), *[value for value in deck.values() ] )
