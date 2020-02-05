@@ -87,7 +87,7 @@
 - [x] 4406
 - [] 4371  => gotta work on it..duh
 - [x] 4299
-- [] 4047  => got 8 out of 10 from test case...
+- [x] 4047  
 - [] 3975
 - [] 3809
 - [] 3750

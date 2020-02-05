@@ -28,36 +28,72 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
 
-open_brackets = [ '[' , '{',  '(']
-close_brackets = [ ']', '}', ')']
+
+
+# ver 1) got 9 out of 10...
+
+# open_brackets = [ '[' , '{',  '(']
+# close_brackets = [ ']', '}', ')']
+
+# T = int(input())
+# for t in range(1, T+1):
+#     stack = []
+#     data = input()
+#     result = 1
+    
+#     for d in data:
+#         if d in open_brackets:
+#             stack.append(d)
+
+#         elif d in close_brackets:
+#             if stack:
+#                 popped = stack.pop()
+#                 if  [close_brackets.index(popped)]
+
+
+#                 if stack:
+#                     if stack[-1] in close_brackets:
+#                         result = 0
+
+#             else:
+#                 result = 0
+
+#     if stack:
+#         result = 0
+
+#     print('#{} {}'.format(t,result))
+
+
+
+
+# ver 2)
+
+brackets = { '{': '}' , '(': ')'}
 
 T = int(input())
 for t in range(1, T+1):
-    stack = []
+
     data = input()
+    stack = []
     result = 1
     
     for d in data:
-        if d in open_brackets:
+        if d in brackets.keys():
             stack.append(d)
 
-        elif d in close_brackets:
+        elif d in brackets.values():
             if stack:
                 popped = stack.pop()
-                if  [close_brackets.index(popped)]
 
-
-                if stack:
-                    if stack[-1] in close_brackets:
-                        result = 0
-
+                if brackets[popped] != d:
+                    result =0
+                    break
             else:
                 result = 0
+                break
 
     if stack:
         result = 0
 
     print('#{} {}'.format(t,result))
-
-
 

@@ -26,12 +26,7 @@
 
 
 T = 10
-<<<<<<< HEAD
-for t in range(T):
-=======
-
 for t in range(1,T+1):
->>>>>>> d357427059de2a9c38f473afaa787ab0cb215cd6
     length, data = input().split()
     length = int(length)
     data = list(data)
@@ -45,20 +40,10 @@ for t in range(1,T+1):
                 gotcha = True
             else:
                 i += 1
-<<<<<<< HEAD
-        if not found:
-            break    
-    print('#{} {}'.format(t+1, ))
-
-
-=======
-
         if not gotcha:
             break    
-    
-
     print('#{} {}'.format(t, ''.join(data)))
->>>>>>> d357427059de2a9c38f473afaa787ab0cb215cd6
+
 
 # T = 10
 
