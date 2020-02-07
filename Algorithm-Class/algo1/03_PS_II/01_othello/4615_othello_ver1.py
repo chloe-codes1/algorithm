@@ -63,25 +63,33 @@ T = int(input())
 for t in range(1, T+1):
     N, M = map(int, input().split())
 
-    board = [ list( 0 for _ in range(N) ) for _ in range(N)]
+    board = [ list( 0 for _ in range(N+2) ) for _ in range(N+2)]
 
-    mark = [1,2,2,1]
-    for i in range(N//2-1 ,N//2 +1):
-        for j in range(N//2-1, N//2 +1):
+    mark = [2,1,1,2]
+    for i in range(N//2 ,N//2 +2):
+        for j in range(N//2, N//2 +2):
             board[i][j] = mark.pop()
 
-    for i in range(M):
-        x, y, color = map(int, input().split())
-        
-        enemy = 1
-        if color:
-            enemy = 2
 
+    for _ in range(M):
+        x, y, color = map(int, input().split())
+        board[y][x] = color
+        
+
+<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
         row = y -1
         col = x -1
+=======
+        for j in range(8):
+            row = y + dr[j]
+            col = x + dc[j]
 
-        dead = []
+            will_killed = []
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
 
+            found = False
+
+<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
         for j in range(8):
             row = x -1
             col = y -1
@@ -92,9 +100,17 @@ for t in range(1, T+1):
                 position = board[row + dr[j]][col + dc[j]]
                 index = [row+dr[j], col+dc[j]]
                 
+=======
+            position = board[row][col]
+
+            while position != 0:
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
                 if position != color:
-                    temp.append(index)
+                    will_killed.append([row, col])
+
+
                 elif position == color:
+<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
                     if not temp:
                         print('여기냐구')    
                         break
@@ -108,22 +124,28 @@ for t in range(1, T+1):
                     
                     temp.clear()
                     print('여기인거니???')
+=======
+                    found = True
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
                     break
 
-                row = row + dr[j]
-                col = col + dc[j]
-                print('temp...에 뭐가 있나요... ',temp)
-        
-        print(dead)
-        if not dead:
-            for d in dead:
-                board[d[0]][d[1]] = color
+                row += dr[j]
+                col += dc[j]
+                position = board[row][col]
+
+
+            if found:
+                for w in will_killed:
+                    board[w[0]][w[1]] = color
+
 
     black = 0
     white = 0
-    for i in range(N):
-        black += board[i].count(1)
-        white += board[i].count(2)
+
+    for b in board:
+        black += b.count(1)
+        white += b.count(2)
+                
 
 
     print('#{} {} {}'.format(t, black, white))

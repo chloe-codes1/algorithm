@@ -94,28 +94,49 @@
 
 
 
+<<<<<<< HEAD
 
 # ver 3)
+=======
+# ver3)
+
+
+from collections import Counter
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268
 
 
 T = int(input())
 for t in range(1, T+1):
     kinds, limit = map(int, input().split())
 
+<<<<<<< HEAD
     options = sorted([list( map(int, input().split())) for _ in range(kinds)])
+=======
+    options = [ list(map (int, input().split())) for _ in range(kinds) ]   
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268
 
-    for i in range(kinds):
-        options[i].insert(0, options[i][1] / options[i][0])
 
+<<<<<<< HEAD
     options = sorted(options)
 
 
+=======
+    print(options)
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268
 
-    favs = []
-    cal = 0
 
-    for i in range(kinds):
+    # for i in range(kinds):
+    #     options[i].insert(0, options[i][1] / options[i][0])
+
+    # options = sorted(options)
+    # print(options)
+
+    # favs = []
+    # cal = 0
+
+    # for i in range(kinds):
         
+<<<<<<< HEAD
         if cal + options[i][2] <= limit:
             favs.append( options[i][1])
             cal += options[i][2]
@@ -142,5 +163,14 @@ for t in range(1, T+1):
     print(options)
 
     print('#{} {}'.format(t,sum(favs)))
+=======
+    #     if cal + options[i][2] <= limit:
+    #         if i < kinds -2 and options[i][1] < options[i+1][1] + options[i+2][1] and cal + options[i+1][1] + options[i+2] <limit  :
+    #             continue
+    #         favs.append( options[i][1])
+    #         cal += options[i][2]
+
+    # print('#{} {}'.format(t,sum(favs)))
+>>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268
 
 
