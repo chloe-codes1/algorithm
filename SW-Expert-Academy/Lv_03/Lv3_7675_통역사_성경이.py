@@ -45,25 +45,28 @@ for t in range(1, T+1):
 
     data = input()
 
-    i = 0
-    for idx, val in enumerate(data):
-            if val == '.' or val== '?' or val=='!':
-                sentences[i] = ''.join(data[:idx+1])
-                data = data[idx+1:]
-                i+=1
-    print(sentences)
+    data = data.replace('?','.')
+    data = data.replace('!','.')
+
+
+    sentences = list( data.split('.'))
+
+
     for j in range(N):
         words = list(sentences[j].split())
 
         for s in range(len(words)):
+            if s == len(words)-1:
+                special_char = words[s][-1]
+                words[s].replace(special_char, '')
+
             word = words[s]
-            print(word)
             if word[0].isupper():
                 isName = True
                 for w in word[1:]:
                     if w.isupper():
                         isName = False
-                    if not w.isalpha():
+                    if w.isnumeric():
                         isName = False
 
                 if isName:
@@ -71,7 +74,7 @@ for t in range(1, T+1):
             elif word[0].islower():
                 continue
 
-    print(result)
+    print('#{}'.format(t), *result)
 
                 
 

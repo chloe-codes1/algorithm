@@ -77,7 +77,6 @@ for t in range(1, T+1):
         if color:
             enemy = 2
 
-
         row = y -1
         col = x -1
 
@@ -88,18 +87,7 @@ for t in range(1, T+1):
             col = y -1
             temp = []
 
-            while True:
-
-                if row == N-1 or row == 0 or col == N -1 or col == 0:
-                    if board[row][col] == enemy:
-                        temp.clear()
-                        print('여기니')
-                        break
-                    elif board[row][col] ==color:
-                        temp.append([row, col])
-                        dead.append(temp)
-                        print('아님 여기니')
-                        break
+            while row in range(N) and col in range(N):
                 
                 position = board[row + dr[j]][col + dc[j]]
                 index = [row+dr[j], col+dc[j]]
@@ -116,8 +104,8 @@ for t in range(1, T+1):
                         print('어디양아아악')
                         break
 
-
-                if position == 0:
+                elif position == 0:
+                    
                     temp.clear()
                     print('여기인거니???')
                     break

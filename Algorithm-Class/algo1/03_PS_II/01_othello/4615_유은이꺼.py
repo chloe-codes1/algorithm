@@ -3,11 +3,14 @@ T = int(input())
 def othello(n, matrix, a, b, color):
     dy = [-1, -1, 0, 1, 1, 1, 0, -1] # b = j
     dx = [0, 1, 1, 1, 0, -1, -1, -1] # a = i
+
     for i in range(8):
         chg_idx = []
         idx = []
+        
         ta = a + dx[i]
         tb = b + dy[i]
+
         temp = matrix[tb][ta]
         while temp != 0:
             if temp != c:

@@ -67,17 +67,49 @@
 
 # ver2)
 
+# T = int(input())
+# for t in range(1, T+1):
+#     kinds, limit = map(int, input().split())
+
+#     options = [list( map(int, input().split())) for _ in range(kinds)]
+
+#     for i in range(kinds):
+#         options[i].insert(0, options[i][1] / options[i][0])
+
+#     options = sorted(options)
+#     print(options)
+
+#     favs = []
+#     cal = 0
+
+#     for i in range(kinds):
+        
+#         if cal + options[i][2] <= limit:
+#             if i < kinds -2 and options[i][1] < options[i+1][1] + options[i+2][1] and cal + options[i+1][1] + options[i+2] <limit  :
+#                 continue
+#             favs.append( options[i][1])
+#             cal += options[i][2]
+
+#     print('#{} {}'.format(t,sum(favs)))
+
+
+
+
+# ver 3)
+
+
 T = int(input())
 for t in range(1, T+1):
     kinds, limit = map(int, input().split())
 
-    options = [list( map(int, input().split())) for _ in range(kinds)]
+    options = sorted([list( map(int, input().split())) for _ in range(kinds)])
 
     for i in range(kinds):
         options[i].insert(0, options[i][1] / options[i][0])
 
     options = sorted(options)
-    print(options)
+
+
 
     favs = []
     cal = 0
@@ -85,11 +117,30 @@ for t in range(1, T+1):
     for i in range(kinds):
         
         if cal + options[i][2] <= limit:
-            if i < kinds -2 and options[i][1] < options[i+1][1] + options[i+2][1] and cal + options[i+1][1] + options[i+2] <limit  :
-                continue
             favs.append( options[i][1])
             cal += options[i][2]
 
+            
+        
+    
+    if cal < limit:
+        for i in range(kinds):
+            if options[i][1] not in favs:
+                if cal + options[i][2] <= limit:
+                    favs.append(options[i][1])
+                    cal += options[i][2]
+
+    if cal < limit:
+        for i in range(kinds):
+            if options[i][1] not in favs:
+                if cal + options[i][2] <= limit:
+                    favs.append(options[i][1])
+                    cal += options[i][2]
+
+    
+
+    print(options)
+
     print('#{} {}'.format(t,sum(favs)))
 
-        
+
