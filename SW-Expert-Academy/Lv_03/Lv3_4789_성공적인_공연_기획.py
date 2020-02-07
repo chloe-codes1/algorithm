@@ -54,15 +54,36 @@
 T = int(input())
 
 for t in range(1, T+1):
-    cowards = list( map(int, input()))
+    cowards = input()
     
     needed = 0
     clappers =0
+    
+    total =  sum(list(map(int, list(cowards))))
 
-    for i in range(len(cowards)):
-        if cowards[i] != 0:
-            clappers += co
+    if cowards[0] == '0':
+        needed =1
+        clappers +=1
+    else:
+        clappers += int(cowards[0])
 
+    for i in range(1, len(cowards)):
+        
+        if cowards[i] != '0':
+            if clappers >= i:
+                clappers += int(cowards[i])
+            else:
+                needed += i+2 - clappers
+                clappers += needed + int(cowards[i])
+
+        if i!=0 and cowards[i] == '0':
+            if clappers >= i+2:
+                clappers += 1
+            else:
+                needed += i+2 -clappers  
+                clappers += needed + 1
+
+    print('#{} {}'.format(t, needed))
     
 
     

@@ -48,7 +48,7 @@ for t in range(1,T+1):
     count = 0
     size = 0
     smaller = ''
-    max = 0
+    biggest = 0
 
     if N > M:
         smaller = 'Bj'
@@ -60,14 +60,14 @@ for t in range(1,T+1):
         size = N
 
     for s in range(count):
-        sum = 0
+        total = 0
         for c in range(size):
             if smaller == 'Aj':
-                sum += Aj[c] * Bj[c+s]
+                total += Aj[c] * Bj[c+s]
             else:
-                sum += Aj[c+s] * Bj[c]
-        if sum > max:
-            max = sum
+                total += Aj[c+s] * Bj[c]
+        if total > biggest:
+            biggest = total
     
-    print('#{0} {1}'.format(t, max))
+    print('#{0} {1}'.format(t, biggest))
         

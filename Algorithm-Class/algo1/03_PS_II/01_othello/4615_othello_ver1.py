@@ -63,79 +63,55 @@ T = int(input())
 for t in range(1, T+1):
     N, M = map(int, input().split())
 
-    board = [ list( 0 for _ in range(N) ) for _ in range(N)]
+    board = [ list( 0 for _ in range(N+2) ) for _ in range(N+2)]
 
-    mark = [1,2,2,1]
-    for i in range(N//2-1 ,N//2 +1):
-        for j in range(N//2-1, N//2 +1):
+    mark = [2,1,1,2]
+    for i in range(N//2 ,N//2 +2):
+        for j in range(N//2, N//2 +2):
             board[i][j] = mark.pop()
 
-    for i in range(M):
+
+    for _ in range(M):
         x, y, color = map(int, input().split())
+        board[y][x] = color
         
-        enemy = 1
-        if color:
-            enemy = 2
-
-
-        row = y -1
-        col = x -1
-
-        dead = []
 
         for j in range(8):
-            row = x -1
-            col = y -1
-            temp = []
+            row = y + dr[j]
+            col = x + dc[j]
 
-            while True:
+            will_killed = []
 
-                if row == N-1 or row == 0 or col == N -1 or col == 0:
-                    if board[row][col] == enemy:
-                        temp.clear()
-                        print('여기니')
-                        break
-                    elif board[row][col] ==color:
-                        temp.append([row, col])
-                        dead.append(temp)
-                        print('아님 여기니')
-                        break
-                
-                position = board[row + dr[j]][col + dc[j]]
-                index = [row+dr[j], col+dc[j]]
-                
+            found = False
+
+            position = board[row][col]
+
+            while position != 0:
                 if position != color:
-                    temp.append(index)
+                    will_killed.append([row, col])
+
+
                 elif position == color:
-                    if not temp:
-                        print('여기냐구')    
-                        break
-                    else:
-                        temp.append(index)
-                        dead.append(temp)
-                        print('어디양아아악')
-                        break
-
-
-                if position == 0:
-                    temp.clear()
-                    print('여기인거니???')
+                    found = True
                     break
 
-                row = row + dr[j]
-                col = col + dc[j]
-                print('temp...에 뭐가 있나요... ',temp)
-        
-        print(dead)
-        if not dead:
-            for d in dead:
-                board[d[0]][d[1]] = color
+                row += dr[j]
+                col += dc[j]
+                position = board[row][col]
+
+
+            if found:
+                for w in will_killed:
+                    board[w[0]][w[1]] = color
+
 
     black = 0
     white = 0
-    for i in range(N):
-        black += board[i].count(1)
-        white += board[i].count(2)
+
+    for b in board:
+        black += b.count(1)
+        white += b.count(2)
+                
 
 
     print('#{} {} {}'.format(t, black, white))
