@@ -18,11 +18,14 @@
 # 각 테스트 케이스마다 몇 개의 삼각형이 필요한지 출력하라.
 
 
+
+# got 848 out of 3004
+
 T = int(input())
 
 for t in range(1, T+1):
     A, B = map(int, input().split())
 
-    count =  (A-B +1) **2 
+    count = (A//B) **2
 
     print('#{} {}'.format(t, count))

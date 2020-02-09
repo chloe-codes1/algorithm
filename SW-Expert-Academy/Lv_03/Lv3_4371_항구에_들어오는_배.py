@@ -32,6 +32,30 @@
 
 
 
+
+# ver1)
+
+# T = int(input())
+
+# for t in range(1, T+1):
+#     N = int(input())
+
+#     days = [ int(input()) for _ in range(N) ]
+    
+#     gaps = []
+
+#     for i in range(N-1):
+#         gap =  days[i+1] - days[i]
+#         if gap not in gaps:
+#             gaps.append(gap)
+    
+#     print('#{} {}'.format(t, len(gaps)))
+
+
+
+# ver2)
+
+
 T = int(input())
 
 for t in range(1, T+1):
@@ -39,17 +63,17 @@ for t in range(1, T+1):
 
     days = [ int(input()) for _ in range(N) ]
     
-    gaps = {}
+    gaps = []
 
-    for i in range(N-1):
-        gap =  days[i+1] - days[i]
-        if gap in gaps.keys():
-            gaps[gap] += 1
-        else:
-            gaps.update({gap : 1})
+    for i in range(1, N):
+        day = days[i] - days[0]
+        for gap in gaps:
+           if day%gap ==0:
+               day = 0
+        if day:
+            gaps.append(day)
+
+    print('#{} {}'.format(t, len(gaps)))
+
     
-    print(gaps)
-
-
-    # print('#{} {}'.format(t, len(gaps)))
 

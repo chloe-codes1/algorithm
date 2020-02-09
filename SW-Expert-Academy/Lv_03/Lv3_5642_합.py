@@ -27,15 +27,11 @@ for t in range(1, T+1):
 
     numbers = list(map(int, input().split()))
 
-    max_sum = 0
+    max_sum = numbers[0]
+    temp = numbers[0]
+    for i in range(1, len(numbers)):
+        temp = max(temp + numbers[i], numbers[i])
+        max_sum = max(temp, max_sum)
 
 
-    for i in range(N):
-        for j in range(i+1,N):
-            temp = sum(numbers[i:j])
-
-            if temp > max_sum:
-                max_sum = temp
-
-    
     print('#{} {}'.format(t,max_sum))

@@ -51,40 +51,62 @@
 
 
 
+
+# ver1)
+
+# T = int(input())
+
+# for t in range(1, T+1):
+#     cowards = input()
+    
+#     needed = 0
+#     clappers =0
+    
+#     total =  sum(list(map(int, list(cowards))))
+
+#     if cowards[0] == '0':
+#         needed =1
+#         clappers +=1
+#     else:
+#         clappers += int(cowards[0])
+
+#     for i in range(1, len(cowards)):
+        
+#         if cowards[i] != '0':
+#             if clappers >= i:
+#                 clappers += int(cowards[i])
+#             else:
+#                 needed += i+2 - clappers
+#                 clappers += needed + int(cowards[i])
+
+#         if i!=0 and cowards[i] == '0':
+#             if clappers >= i+2:
+#                 clappers += 1
+#             else:
+#                 needed += i+2 -clappers  
+#                 clappers += needed + 1
+
+#     print('#{} {}'.format(t, needed))
+    
+
+
+
+# ver 2)
+
 T = int(input())
 
 for t in range(1, T+1):
-    cowards = input()
-    
-    needed = 0
-    clappers =0
-    
-    total =  sum(list(map(int, list(cowards))))
+    cowards = list(map(int, input()))
 
-    if cowards[0] == '0':
-        needed =1
-        clappers +=1
-    else:
-        clappers += int(cowards[0])
+    needed = 0
+
+    clappers = cowards[0]
 
     for i in range(1, len(cowards)):
-        
-        if cowards[i] != '0':
-            if clappers >= i:
-                clappers += int(cowards[i])
-            else:
-                needed += i+2 - clappers
-                clappers += needed + int(cowards[i])
-
-        if i!=0 and cowards[i] == '0':
-            if clappers >= i+2:
-                clappers += 1
-            else:
-                needed += i+2 -clappers  
-                clappers += needed + 1
+        if clappers < i and cowards[i] !=0:
+            needed += i - clappers
+            clappers = cowards[i] + i 
+        else:
+            clappers += cowards[i]
 
     print('#{} {}'.format(t, needed))
-    
-
-    
-

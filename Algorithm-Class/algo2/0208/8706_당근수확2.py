@@ -27,22 +27,20 @@ for t in range(1, T+1):
     N, capacity = map(int, input().split())
     spots = list(map(int, input().split()))
 
-    total = sum(spots)
     distance = 0
-
     carrage= 0
     i = 0
-    while True:
-        if total == 0:
-            break
-        
-        current = carrage + spots[i]
-        if capacity < current:
-
-            while True:
-                if capacity > carrage + spots[i]:
-                    break
-        
+    while i < N:
+        if spots[i] >= capacity -carrage:
+            spots[i] -= capacity - carrage
+            carrage = 0
+            distance += (i+1)*2
+        else:
+            carrage += spots[i]
+            i+=1
+            distance+=1
+    distance += N
+    print('#{} {}'.format(t, distance))
 
         
 

@@ -18,39 +18,20 @@
 # 만약 이런 X가 존재하지 않으면 -1을 출력한다.
 
 
-from math import pow
 
 T = int(input())
 
 for t in range(1, T+1):
     N = int(input())
 
-    cube_root = round(N**(1./3.),15)
-    float_root = N**(1./3.)
+    is_Cube_Root = False
 
-    print(abs(float_root-cube_root))
-
-
-    if cube_root.is_integer():
-        print('#{} {}'.format(t, round(cube_root)))
+    for i in range(1000001):
+        if i*i*i == N:
+            result = i
+            is_Cube_Root = True
+    
+    if is_Cube_Root:
+        print('#{} {}'.format(t,result))
     else:
         print('#{} -1'.format(t))
-
-
-
-
-# T = int(input())
- 
-# for tc in range(1, T+1):
-#     N = int(input())
- 
-#     flt_x = N**(1/3)
-#     int_x = round((N**(1/3)))
- 
-#     if abs(flt_x-int_x) < 10**-5:
-#         result = int_x
- 
-#     else:
-#         result = -1
-     
-#     print('#{} {}'.format(tc, result))
