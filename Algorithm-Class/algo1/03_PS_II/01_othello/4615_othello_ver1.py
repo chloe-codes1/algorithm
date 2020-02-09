@@ -76,57 +76,23 @@ for t in range(1, T+1):
         board[y][x] = color
         
 
-<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
-        row = y -1
-        col = x -1
-=======
         for j in range(8):
             row = y + dr[j]
             col = x + dc[j]
 
             will_killed = []
->>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
 
             found = False
 
-<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
-        for j in range(8):
-            row = x -1
-            col = y -1
-            temp = []
-
-            while row in range(N) and col in range(N):
-                
-                position = board[row + dr[j]][col + dc[j]]
-                index = [row+dr[j], col+dc[j]]
-                
-=======
             position = board[row][col]
 
             while position != 0:
->>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
                 if position != color:
                     will_killed.append([row, col])
 
 
                 elif position == color:
-<<<<<<< HEAD:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello.py
-                    if not temp:
-                        print('여기냐구')    
-                        break
-                    else:
-                        temp.append(index)
-                        dead.append(temp)
-                        print('어디양아아악')
-                        break
-
-                elif position == 0:
-                    
-                    temp.clear()
-                    print('여기인거니???')
-=======
                     found = True
->>>>>>> 3be38ba15cd66de0204cc204877ab5219ee19268:Algorithm-Class/algo1/03_PS_II/01_othello/4615_othello_ver1.py
                     break
 
                 row += dr[j]
