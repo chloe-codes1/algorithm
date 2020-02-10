@@ -45,9 +45,8 @@ status = list(map(int, status))
 if len(status) <= 20:
     print(*status)
 else:
-    for i in range(1, switches +1):
-        print(status[i], end=' ')
+    for i in range(1, len(status) +1):
+        print(status[i-1], end= ' ')
 
-        if i == 20:
-            print(sta)
-        
+        if i %20 ==0:
+            print()
