@@ -26,12 +26,11 @@ N = int(input())
 
 deck = deque( n for n in range(1,N+1))
 
-for i in range(N):
-    if i%2:
-        deck.append(deck.popleft)
-    else:
-        deck.popleft
+while True:
+    if len(deck) == 1:
+        break
+    deck.popleft()
+    deck.rotate(-1) 
+    #-> Rotate the deque n steps to the right. If n is negative, rotate to the left.
 
-print(deck[0])
-
-
+print(*deck)
