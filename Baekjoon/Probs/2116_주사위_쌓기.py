@@ -28,13 +28,13 @@ for i in range(6):
     row = 1
     while True:
         options = [n for n in range(1,7)]
-        if row >= N:
+        if row == N:
             break
         side = opposite
         options.remove(side)
-        opposite = dices[row][ matches[i]]
+        opposite = dices[row][ matches[ dices[row].index(side) ]]
         options.remove(opposite)
-        
+
         count += max(options)
         row +=1
 
@@ -43,7 +43,7 @@ for i in range(6):
         max_sum = count
 
 
-print('max_sum~~~ ㅎ_ㅎ', max_sum)
+print(max_sum)
 
 
 
