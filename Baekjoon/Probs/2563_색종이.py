@@ -21,3 +21,24 @@
 
 
 
+N = int(input())
+
+board = [ list( [0]*100 ) for _ in range(100)]
+
+
+for n in range(N):
+    col, row = map(int, input().split())
+
+    for i in range(row, row +10):
+        for j in range(col, col +10):
+            board[i][j] = 1
+
+count = 0
+
+for b in range(100):
+    count += board[b].count(1)
+
+print(count)
+
+
+
