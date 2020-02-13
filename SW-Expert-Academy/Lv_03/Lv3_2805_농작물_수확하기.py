@@ -44,31 +44,53 @@
 
 
 
+
+
+# T = int(input())
+# for t in range(1, T+1):
+#
+#     N = int(input())
+#
+#     farm = [[]*n for n in range(N)]
+#
+#     for n in range(N):
+#         farm[n] = list(map(int, input()))
+#
+#     total = 0
+#
+#     k =0
+#
+#     for i in range(N):
+#
+#         for j in range(N//2-k, N//2 +k +1):
+#             total += farm[i][j]
+#
+#         if i >= N//2:
+#             k -=1
+#         else:
+#             k +=1
+#
+#     print('#{} {}'.format(t, total))
+
+# -------------------------------------------- 다시 풀기 --------------------------------------------
+
+
 T = int(input())
+
 for t in range(1, T+1):
+    size = int(input())
+    field = [list( map( int,input()))  for _ in range(size)]
 
-    N = int(input())
+    crop = 0
+    index = 0
 
-    farm = [[]*n for n in range(N)]
-
-    for n in range(N):
-        farm[n] = list(map(int, input()))
-
-    total = 0
-
-    k =0
-
-    for i in range(N):
-    
-        for j in range(N//2-k, N//2 +k +1):
-            total += farm[i][j]
-            print(j)
-        
-        print()
-        if i >= N//2:
-            k -=1
+    for i in range(size):
+        for j in range(size//2 -index, size//2 +index +1):
+            crop += field[i][j]
+        if i >= size//2:
+            index -= 1
         else:
-            k +=1
+            index += 1
 
-    print('#{} {}'.format(t, total))
+    print('#{} {}'.format(t, crop))
 

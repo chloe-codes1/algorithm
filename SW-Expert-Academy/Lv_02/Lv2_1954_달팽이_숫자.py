@@ -47,6 +47,8 @@ for i in range(1,T+1):
 
     array = [[-1]*N for n in range(N)]
 
+    print(array)
+
     while num < N*N:
         direction = directions[index]
         temp_x = current_x + direction[0]

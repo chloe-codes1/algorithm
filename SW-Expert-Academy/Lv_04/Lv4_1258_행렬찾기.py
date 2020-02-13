@@ -86,4 +86,17 @@
 T = int(input())
 
 for t in range(1, T+1):
-    
+    N = int(input())
+    garage = [ list(map(int, input().split())) for _ in range(N)]
+
+    row = 0
+    col = 0
+
+    while row < N:
+
+        while col < N:
+            if garage[row][col] != 0:
+                col_count =0
+                for i in range(col, N-col +1):
+
+

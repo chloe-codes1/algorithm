@@ -120,7 +120,7 @@
         
 
 
-# ver 2)
+# ver 2) 형수님 최고..
 
 
 for _ in range(4):
