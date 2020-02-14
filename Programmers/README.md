@@ -1,7 +1,9 @@
 # Programmers Probs
+> Python based implementations of algorithms
 
+<br/>
 
-Stack / Queue
+### Stack / Queue
 
 - [x] 올바른 괄호
 - [x] 탑

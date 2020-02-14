@@ -11,7 +11,6 @@
 
 from collections import deque
 
-brackets = [ '(', ')']
 
 N = int(input())
 for n in range(N):
