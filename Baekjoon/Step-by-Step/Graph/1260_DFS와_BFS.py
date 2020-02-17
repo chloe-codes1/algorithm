@@ -8,7 +8,54 @@
 # 첫째 줄에 DFS를 수행한 결과를, 그 다음 줄에는 BFS를 수행한 결과를 출력한다. V부터 방문된 점을 순서대로 출력하면 된다.
 
 
-def DFS
+def DFS(matrix, vertex, start):
+    stack = []
+    visited = [ 0 for _ in range(vertex+1)]
+    result = []
+    stack.append(start)
+    visited[start] = 1
+    result.append(start)
+
+    while stack:
+        temp = start
+        for spot in matrix[start]:
+            if not visited[spot]:
+                stack.append(spot)
+                visited[spot] = 1
+                start = spot
+                result.append(start)
+                break
+        else:
+            if temp == start:
+                stack.pop()
+    
+    return result
+
+
+
+def BFS(matrix, vertex, start):
+    queue = []
+    result = []
+    visited = [ 0 for _ in range(vertex +1)]
+    queue.append(start)
+    result.append(start)
+
+    while queue:
+        temp = queue.pop(0)
+        if not visited[temp]:
+            visited[temp] = True
+        
+        for spot in matrix[temp]:
+            if not visited[spot]:
+                queue.append(spot)
+                result.append(spot)
+                visited[spot] = True
+
+    
+    return result
+
+
+
 
 
 
@@ -17,10 +64,14 @@ def DFS
 
 vertex, edge, start = map(int, input().split())
 
-matrix = [ [0]*(vertex +1) for _in range(N+1) ]
+matrix = [ [] for _ in range(vertex+1) ]
 
-for _in range(edge):
-    data = list(map(int, input().split()))
+for _ in range(edge):
+    f, t = map(int, input().split())
 
-    matrix[data[0]][data[1]] = 1
-    matrix[data[1]][data[0]] = 1
+    matrix[f].append(t)
+    matrix[t].append(f)
+
+
+print(DFS(matrix,vertex,start))
+print(BFS(matrix,vertex,start))

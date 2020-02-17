@@ -20,5 +20,4 @@
 
 
 
-  vertex, edge = map(int, input())
 
