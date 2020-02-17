@@ -24,25 +24,19 @@ for e in range(edge):
 
     M[f][t] = M[t][f] = 1 #다중할당  -> 친구관계는 양방향이니까!
 
-
     # 2. 인접 리스트 { f: [t1,t2]}
 
     G[f].append(t)
     G[t].append(f)
 
-
-
     # 3. Edge list    - 역시 양방향으로 만들어줌
     F.append([f,t])
     F.append([t,f])
-
-
 
 for i in range(len(F)):
     for j in range(len(F)):
         A, B  = F[i]
         C, D = F[j]
-
 
         if A == B or A == C or A==D or B==C or B==D or C ==D:
             continue

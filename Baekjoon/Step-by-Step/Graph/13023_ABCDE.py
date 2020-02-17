@@ -18,40 +18,7 @@
 # 문제의 조건에 맞는 A, B, C, D, E가 존재하면 1을 없으면 0을 출력한다.
 
 
-V, E = map(int, input().split())
-
-relation = [ [0]*V for _ in range(V)  ]
-
-relations = {}
 
 
-for e in range(E):
-    f, t = map(int, input().split())  # from, to
-
-    # 1. 인접 행렬 [[]]
-
-    relation[f][t] +=1
-
-
-
-
-
-    # 2. 인접 리스트  { f: [t1,t2]}
-
-    if f not in relations:
-        relations.update({f : [t]})
-    else:
-        relations[f].append(t)
-
-
-print(relation)
-print(relations)
-
-
-result =1
-
-
-
-            
-
+  vertex, edge = map(int, input())
 
