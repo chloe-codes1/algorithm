@@ -70,10 +70,9 @@
 # 작업 순서는 V개 정수를 공백을 사이에 두고 나열하는 것이다.
 
 
-from collections import deque
 
 
-T = 3
+T = 5
 for t in range(1, T+1):
 
     vertex, edge = map(int, input().split())
@@ -82,21 +81,28 @@ for t in range(1, T+1):
     before = [ orders[b] for b in range(edge*2) if not b%2 ]
     after = [ orders[a] for a in range(edge*2) if a%2 ]
 
-    result = deque()
+    result = []
+    done = [ False for _ in range(vertex+1)]
 
 
-    for idx, val in enumerate(before):
-        if val not in after and val in options:
-            result.append(val)
-    
+    for v in range(1, vertex+1):
+        if v in after and done[v] == False:
+
+            for i in idx, val in enumerate():
+                if v == val and orders[idx -1] not in result:
+                    break
+            else:
+                if v not in result:
+                    result.append(v)
+        else:
+            if 여기 앉지마 이자식아
 
 
-    while True:
+                if v not in result:
+                    result.append(v)
 
 
 
-        for idx, val in enumerate(options):
-            if val 
 
 
     print(result)
