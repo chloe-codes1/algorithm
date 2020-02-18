@@ -72,7 +72,7 @@
 
 
 
-T = 5
+T = 4
 for t in range(1, T+1):
 
     vertex, edge = map(int, input().split())
@@ -82,28 +82,22 @@ for t in range(1, T+1):
     after = [ orders[a] for a in range(edge*2) if a%2 ]
 
     result = []
-    done = [ False for _ in range(vertex+1)]
+    done = [None] + [False]*vertex
 
 
-    for v in range(1, vertex+1):
-        if v in after and done[v] == False:
+    while True:
 
-            for i in idx, val in enumerate():
-                if v == val and orders[idx -1] not in result:
+        if len(result) == vertex:
+            break
+
+        for v in range(1, vertex+1):
+            if done[v] == False:
+                #for???
+                if v in after and done[ before[after.index(v)]] ==False:
                     break
-            else:
-                if v not in result:
+                else:
                     result.append(v)
-        else:
-            if 여기 앉지마 이자식아
-
-
-                if v not in result:
-                    result.append(v)
-
-
-
-
+                    done[v] == True
 
     print(result)
         
