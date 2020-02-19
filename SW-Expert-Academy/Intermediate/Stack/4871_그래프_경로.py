@@ -75,7 +75,6 @@ for t in range(1, T+1):
     temp = []
     result = 1
     while True:
-        
 
         for i in range(lines):
             if start == infos[i][0]:
@@ -87,7 +86,6 @@ for t in range(1, T+1):
 
         if start == end:
             break
-
 
         if start not in starts:
             if temp:

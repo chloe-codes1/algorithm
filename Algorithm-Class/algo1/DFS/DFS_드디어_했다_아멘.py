@@ -13,7 +13,6 @@ def DFS(v):
     print(str(v) , end= ' ')
 
     while stack:
-
         temp = v
         for spot in graph[v]:
             if not visited[spot]:
@@ -22,7 +21,6 @@ def DFS(v):
                 v = spot
                 print(str(v) , end = ' ')
                 break
-        
         else:
             if temp == v:
                 v = stack.pop()
@@ -37,6 +35,5 @@ for i in range(edge):
 
     graph[f].append(t)
     graph[t].append(f)
-
 
 DFS(1)

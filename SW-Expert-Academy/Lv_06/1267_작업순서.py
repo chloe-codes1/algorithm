@@ -71,15 +71,16 @@
 
 
 
+#은정언니 없었음 못했다...ㅠ_ㅠ
 
-T = 4
+T = 10
 for t in range(1, T+1):
 
     vertex, edge = map(int, input().split())
     orders = list(map(int, input().split()))
 
-    before = [ orders[b] for b in range(edge*2) if not b%2 ]
-    after = [ orders[a] for a in range(edge*2) if a%2 ]
+    before = [ orders[b] for b in range(len(orders)) if not b%2 ]
+    after = [ orders[a] for a in range(len(orders)) if a%2 ]
 
     result = []
     done = [None] + [False]*vertex
@@ -92,14 +93,14 @@ for t in range(1, T+1):
 
         for v in range(1, vertex+1):
             if done[v] == False:
-                #for???
-                if v in after and done[ before[after.index(v)]] ==False:
-                    break
+                for i in range(len(after)):
+                    if after[i] == v and done[before[i]] ==False:
+                        break
                 else:
                     result.append(v)
-                    done[v] == True
+                    done[v] = True
 
-    print(result)
+    print('#{}'.format(t), *result)
         
 
 
