@@ -10,7 +10,6 @@ def min_sum(n, k, temp):
         for i in range(k):
             if used[i] == 0:
                 used[i] =1
-                result[n] = i
                 value = data[n][i]
                 min_sum(n+1, k, temp + value)
                 used[i] = 0

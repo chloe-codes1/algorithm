@@ -32,7 +32,15 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 1등의 번호를 출력한다.
 
 
-def game():
+def game(array):
+    if len(array) ==1:
+        return array[0]
+
+    else:
+        
+
+        
+    
     
 
 
