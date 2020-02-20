@@ -5,7 +5,7 @@ def f(n,k):
         print(array)
 
     for i in range(n, k):
-        array[n], array[i] = array[i], array[n]
+        array[n], array[i] = array[i], array[n] 
         f(n+1, k)
         array[i], array[n] = array[n], array[i]
 

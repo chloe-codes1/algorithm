@@ -12,10 +12,8 @@ def f(n, k, m):
                 f(n+1,k,m)
                 used[i] = 0
 
-
-
 array = [1,2,3,4,5]
 length = len(array)
-result = [0] * length
+result = [0] * 3
 used = [0] * length
 f(0, 3, length)
