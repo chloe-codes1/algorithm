@@ -24,9 +24,17 @@ def dfs2(r,c):
     visited[r][c] = 1
 
     while stack:
-        if 
+        row, col = stack.pop()
+        if maze[row][col] == '3':
+            return 1
+        for k in range(4):
+            nr = row + dr[k]
+            nc = col + dc[k]
 
-
+            if maze[nr][nc] != '1' and visited[nr][nc] == 0:
+                stack.append((nr,nc))
+                visited[nr][nc] = 1
+    return 0           
 
 for _ in range(1, T+1):
     case = int(input())
