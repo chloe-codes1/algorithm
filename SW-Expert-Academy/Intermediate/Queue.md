@@ -66,7 +66,7 @@
 
     : 메모리 낭비가 심함
 
-- 단점 해결 방법
+- 선형 큐의 단점 해결 방법
 
   1. 원형 큐 사용으로 메모리 절약
 
@@ -74,7 +74,7 @@
 
      but, 삽입/삭제 시 연산 수행에 많은 시간 소모
 
-  3. linked list로 구현한 queue 사요으로 메모리 동적 확보
+  3. linked list로 구현한 queue 사용으로 메모리 동적 확보
 
 <br>
 
@@ -106,5 +106,47 @@
 | 선형 큐       | rear = rear + 1       | front = front +1       |
 | 원형 큐       | rear = (rear + 1) % n | front = (front + 1) %n |
 
-<br><br>
+<br>
 
+<br>
+
+#### 연결 큐
+
+- Linked List를 이용한 Queue
+  - Queue의 원소: Linked List의 각 node
+  - Queue의 원소 순서: 각 node의 연결 순서 (link로 연결되어 있음)
+  - Front: 첫 번째 node를 가리키는 link
+  - Rear: 마지막 node를 가리키는 link
+- 상태 표현
+  - 초기 상태: front = rear = None
+  - 공백 상태: front = rear = None
+
+<br>
+
+<br>
+
+### Queue Module
+
+<br>
+
+#### Classes
+
+1. queue.Queue(maxsize)
+
+   : FIFO Queue Object 생성
+
+2. queue.LifoQueue(maxsize)
+
+   : Stack 개념의 LIFO Queue Object 생성
+
+3. queue.PriorityQueue(maxsize)
+
+   : 우선순위 Queue Object 생성
+
+   - 입력되는 item의 형식은 (순위, 아이템)의 튜플로 입력되며, 우선순위는 숫자가 작을수록 높은 우선순위를 가짐
+
+
+
+
+
+https://www.geeksforgeeks.org/stack-queue-python-using-module-queue/
