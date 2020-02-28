@@ -6,11 +6,11 @@ def f(n, k, m):
         print(result)
     else:
         for i in range(m):
-            if used[i] == 0:
-                used[i] = 1
-                result[n] = array[i]
-                f(n+1,k,m)
-                used[i] = 0
+            # if used[i] == 0:
+                # used[i] = 1
+            result[n] = array[i]
+            f(n+1,k,m)
+                # used[i] = 0
 
 array = [1,2,3,4,5]
 length = len(array)

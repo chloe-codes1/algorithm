@@ -22,7 +22,6 @@ for t in range(1, T+1):
     
 
     length = len(data)
-    result = [0] * length
     used = [0] * length
     s = 100000
     min_sum(0, length, 0)
