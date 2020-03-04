@@ -6,7 +6,7 @@ dr = [-1, 0, 1, 0]
 dc = [0, -1, 0, 1]
 
 
-def bfs(r,c,d):
+def get_path(r,c,d):
     global SUM
     visited[r][c] = True
     queue.append((r,c,d))
@@ -45,7 +45,7 @@ for t in range(1, T+1):
             visited = [[0]*size for _ in range(size)]
             SUM = 0
             queue = deque()
-            bfs(row,col,1)
+            get_path(row,col,1)
             if result < SUM:
                 result = SUM
                 start = rooms[row][col]

@@ -23,7 +23,7 @@ for tc in range(1, T+1):
                         flag = 1
                         break
                 if flag == 0:
-                    visited[i][j] = cnt
+                    visited[i][j] = cnt #visited에 뭐를 저장하는거지??
                     break
                 elif visited[x][y] != 0:
                     visited [i][j] += visited[x][y] + cnt - 1
