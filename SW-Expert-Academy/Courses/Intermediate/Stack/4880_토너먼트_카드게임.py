@@ -36,7 +36,7 @@ def win(a,b):
         return b
     else:
         return a
-
+ 
 def game(i,j):
     if i == j:
         return i
