@@ -31,22 +31,19 @@
 
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 1등의 번호를 출력한다.
 
-
-def game(array):
-    if len(array) ==1:
-        return array[0]
-
+def win(a,b):
+    if selected[a]%3 +1 == selected[b]:
+        return b
     else:
-        
+        return a
 
-        
-    
-    
-
-
-
-
-
+def game(i,j):
+    if i == j:
+        return i
+    else:
+        r1 = game(i, (i+j)//2)
+        r2 = game((i+j)//2 +1, j)
+        return win(r1,r2)
 
 T = int(input())
 
@@ -54,5 +51,5 @@ for t in range(1, T+1):
     N = int(input())
     selected = [None] + list(map(int, input().split()))
 
-    print('#{} {}'.format(game(selected))
+    print('#{} {}'.format(t,game(1,N)))
 
