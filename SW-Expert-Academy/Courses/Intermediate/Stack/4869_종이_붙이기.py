@@ -22,16 +22,16 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
 
-def paste(k, N):
+def paste(k):
     if k == N:
-
-
-
-
-
+        return 1
+    elif k > N:
+        return 0
+    else:
+        return paste(k+10)+paste(k+20)*2
 
 T = int(input())
-
 for t in range(1, T+1):
     N = int(input())
+    print('#{} {}'.format(t, paste(0)))
 

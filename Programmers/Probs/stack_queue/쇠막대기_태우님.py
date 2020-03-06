@@ -12,6 +12,4 @@ def solution(arrangement):
             stack += 1
     return answer
 
-
-
 print(solution('()(((()())(())()))(())'))

@@ -25,3 +25,18 @@
 # ()(((()())(())()))(())	17
 
 
+
+def solution(arrangement):
+    answer = 0
+    stack = []
+    for idx, val in enumerate(arrangement):
+        if val == ')':
+            stack.pop()
+            if arrangement[idx-1] == '(':
+                answer += len(stack)
+            else:
+                answer += 1
+        else:
+            stack.append('(')
+ 
+    return answer
