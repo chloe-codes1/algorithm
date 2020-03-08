@@ -147,6 +147,35 @@
 
 
 
+<br>
 
+참고!
 
 https://www.geeksforgeeks.org/stack-queue-python-using-module-queue/
+
+<br>
+
+<br>
+
+### Queue 의 활용
+
+<br>
+
+#### 우선순위 Queue
+
+- 우선순위를 가진 항목들을 저장하는 큐
+- FIFO 순서가 아니라 우선순위가 높은 순서대로 먼저 나가게 됨
+
+<br>
+
+##### List 를 이용한 우선순위 큐
+
+1. 원소를 삽입하는 과정에서 우선순위를 비교하여 적절한 위치에 삽입하는 구조
+2. 가장 앞에 최고 우선순위의 원소가 위치하게 됨
+3. But, list를 사용하므로 삽입/삭제 연산이 일어날 때 원소의 재배치가 발생
+   - 소요되는 시간이 많이 걸림
+   - 메모리 사용이 큼
+     - Solution
+       - PriorityQueue class 사용
+       - Heap 자료구조 사용
+
