@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-brackets = [ '(', ')', '[', ']']
-
-data = list(input().split('.'))
-
-print(data)
-=======
 from collections import deque
 
 brackets = { '(': ')', '[': ']' }
@@ -40,4 +32,3 @@ for i in range(len(datas)):
         result = 'no'
 
     print(result)
->>>>>>> d193c42f3c50f72ca23f79db75dadc8fbefedb0e
