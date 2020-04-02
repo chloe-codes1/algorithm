@@ -1,7 +1,7 @@
 # Queue
 
 1. 삽입/삭제의 위치가 제한적인 자료구조
-2. FIFO (= First In First Out)
+2. `FIFO (= First In First Out)`
 
 3. 기본연산
    - 삽입: enQueue
@@ -26,7 +26,7 @@
 
 - rear: 저장된 마지막 원소의 index
 
-- 상태 표현
+- **상태 표현**
 
   - 초기 상태
 
@@ -42,7 +42,7 @@
 
       (n: 리스트의 크기, n-1: 리스트의 마지막 index)
 
-- 문제점
+- **문제점**
 
   : 잘못된 포화 상태 인식
 
@@ -84,21 +84,25 @@
 
 - 특징
 
-  - 초기 공백 상태
+  - **초기 공백 상태**
 
     : front = rear = 0
 
-  - index의 순환
+  - **index의 순환**
 
     - front와 rear의 위치가 list의 마지막 index인 n-1을 가리킨 후, 논리적 순환을 이루어 list의 처음 index인 0으로 이동해야 함
     - 이를 위해 나머지 연산자 %를 사용
 
+  - 포화상태 검사
+
+    - 삽입할 rear 의 다음위치 == 현재위치 일 때
+
   - front 변수
 
     : 공백 상태와 포화 상태 구분을 쉽게 하기 위해 front가 있는 자리는 사용하지 않고 항상 빈자리로 둠
-
+  
     <br>
-
+  
     
 
 | 테이블 인덱스 | 삽입 위치             | 삭제 위치              |
@@ -112,14 +116,41 @@
 
 #### 연결 큐
 
-- Linked List를 이용한 Queue
-  - Queue의 원소: Linked List의 각 node
-  - Queue의 원소 순서: 각 node의 연결 순서 (link로 연결되어 있음)
-  - Front: 첫 번째 node를 가리키는 link
-  - Rear: 마지막 node를 가리키는 link
+- **Linked List를 이용한 Queue**
+  
+  - Queue의 원소
+  
+    : Linked List의 각 node
+  
+  - Queue의 원소 순서
+  
+    : 각 node의 연결 순서 (link로 연결되어 있음)
+  
+  - Front
+  
+    : 첫 번째 node를 가리키는 link
+  
+  - Rear
+  
+    : 마지막 node를 가리키는 link
 - 상태 표현
-  - 초기 상태: front = rear = None
+  - 초기 상태
+  
+    : front = rear = None
+  
   - 공백 상태: front = rear = None
+
+<br>
+
+<br>
+
+
+
+
+
+
+
+
 
 <br>
 
@@ -164,7 +195,7 @@ https://www.geeksforgeeks.org/stack-queue-python-using-module-queue/
 #### 우선순위 Queue
 
 - 우선순위를 가진 항목들을 저장하는 큐
-- FIFO 순서가 아니라 우선순위가 높은 순서대로 먼저 나가게 됨
+- FIFO 순서가 아니라 *우선순위가 높은 순서대로* 먼저 나가게 됨
 
 <br>
 
@@ -179,3 +210,19 @@ https://www.geeksforgeeks.org/stack-queue-python-using-module-queue/
        - PriorityQueue class 사용
        - Heap 자료구조 사용
 
+<br>
+
+<br>
+
+#### Buffer
+
+- 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 memory 영역
+- `Buffering`
+  - buffer를 활영하는 방식
+  - buffer를 채우는 동작
+
+<br>
+
+##### Buffer의 자료구조
+
+- buffer는 일반적으로 입출력 및 네트워크와 관련된 기능에서 이용
