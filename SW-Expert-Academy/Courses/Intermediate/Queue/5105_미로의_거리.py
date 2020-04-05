@@ -24,8 +24,6 @@ def bfs(r,c,d):
                 visited[nr][nc] = True
                 queue.append((nr,nc,nd))
 
-
-
 T = int(input())
 for t in range(1,T+1):
     N = int(input())
@@ -34,14 +32,12 @@ for t in range(1,T+1):
     maze.insert(0, ['1' for _ in range(size)] )
     maze.append(['1' for _ in range(size)])
 
-
     for r in range(size):
         for c in range(size):
             if maze[r][c] == '2':
                 sr, sc = r, c
             if maze[r][c] == '3':
                 end = (r,c)
-
 
     visited = [[False]*size for _ in range(size)]
     result = 0
