@@ -1,20 +1,19 @@
-from collections import deque
+
+# 시간초과 ㅎ_ㅎ Linked List로 풀어야겠당
 
 T = int(input())
 
 for t in range(1, T+1):
     N, M = map(int, input().split())
-    
-    base = deque(map(int, input().split()))
-
-    for _ in range(M-1):
-        merge = deque(map(int, input().split()))
-        head = merge[0]
-        for idx, val in enumerate(base):
-            if val > head:
-                base.insert(idx-1, merge)
+    base = []
+    for _ in range(M):
+        merge = list(map(int, input().split()))
+        for i in range(len(base)):
+            if base[i] > merge[0]:
+                base = base[:i] + merge + base[i:]
                 break
         else:
-            base.append(merge)
+            base += merge
 
-    print(base)                
+    # print('#{}'.format(t) ,*list( base[i] for i in range(-1,-11,-1) ))                
+    print('#{}'.format(t) ,*base[-1:-11:-1])                
