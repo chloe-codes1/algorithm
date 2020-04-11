@@ -2,20 +2,58 @@
 
 <br>
 
-## 순차 리스트
+<br>
+
+## Python List
+
+- 순서를 가진 data의 묶음
+  - 같은 data 중복 저장 가능
+- `Sequence` 자료형
+  - indexing, slicing, operator, method 사용 가능
+- 크기 제한 없음
+- Type 제한 없음
+
+<br>
+
+<br>
+
+### List 복사
+
+- 여러 가지 방법으로 리스트 복사
+- 수행시간의 차이가 있고, 의미가 다른 항목 존재
+
+<br>
+
+| Code                                              | Description                                                  |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| new_list = old_list                               | `주소`의 복사<br>얕은 복사                                   |
+| new_list = old_list[:]                            | `Slicing` <br>깊은 복사                                      |
+| new_list = [] <br>new_list.extend(old_list)       | `extend()` : list를 추가하는 함수<br>깊은 복사               |
+| new_list = list(old_list)                         | `list()`<br>깊은 복사                                        |
+| import copy<br>new_list = copy.copy(old_list)     | `copy` 활용<br>깊은 복사                                     |
+| new_list = [ i for i in old_list ]                | `List comprehension`<br>깊은 복사                            |
+| import copy<br>new_list = copy.deepcopy(old_list) | `deepcopy` 활용<br>List 원소까지도 깊은 복사<br>가장 느림<br>깊은 복사 |
+
+<br><br>
+
+## 순차 리스트 
 
 - 구현 방법
 
   - 1차원 배열에 항목들을 순서대로 저장한다
   - 데이터의 종류와 구조에 따라 구조화된 자료구조를 만들어 배열로 만들 수도 있다
 
+- 초기화 및 생성
+
+  - 변수에 값을 초기화하는 것으로 리스트 생성
+
 - 데이터 접근
 
-  - 배열의 `index` 를 이용해 원하는 위치의 data에 접근 할 수 있다
+  - 배열의 `index` 를 이용해 원하는 위치의 data에 접근해 data를 변경하고 참조 할 수 있다
 
 - 삽입 연산
 
-  - 삽입 위치 다음의 항목들을 이동해야 한다
+  - 삽입 위치 다음의 항목들을 **이동**해야 한다
 
   - 파이썬에서 다음의 함수들의 내부에서 삽입 연산이 일어남
 
@@ -43,9 +81,17 @@
 
 ## 연결 리스트 (Linked List)
 
-- 자료의 논리적인 순서와 memory상의 물리적인 순서가 일치하지 않고, 개별적으로 위치하고 있는 원소의 주소를 연결하여 하나의 전체적인 자료구조를 이룸
-- `link`를 통해 원소에 접근하므로, 순차 리스트에서처럼 물리적인 순서를 맞추기 위한 작업이 필요하지 않다
+> List의 단점을 보완한 자료 구조
+
+- 자료의 논리적인 순서와 memory상의 물리적인 순서가 일치하지 않고, 
+
+  **개별적으로 위치**하고 있는 원소의 주소를 연결하여 하나의 전체적인 자료구조를 이룸
+
+- `link`를 통해 원소에 접근하므로, 순차 리스트에서처럼 **물리적인 순서**를 맞추기 위한 작업이 필요하지 않다
+
 - 자료구조의 크기를 **동적**으로 조정할 수 있어, memory의 효율적인 사용이 가능하다 - **장점**
+
+- 탐색 - **순차 탐색**
 
 <br>
 
@@ -53,11 +99,86 @@
 
 - `Linked list`에서 하나의 원소에 필요한 data를 갖고있는 자료 단위
   - 구성 요소
-    1. data field
-       - 원소의 값을 저장하는 자료구조
+    1. #### data field
+       
+       - 원소의 `값`을 저장하는 자료구조
        - 저장할 원소의 종류나 크기에 따라 구조를 정의하여 사용
-    2. link field
-       - 다음 node의 주소를 저장하는 자료구조
+    2. #### link field
+       
+       - 다음 node의 `주소`를 저장하는 자료구조
+
+<br>
+
+### Head
+
+- List의 처음 Node를 가리키는 reference
+
+<br>
+
+<br>
+
+## 단순 연결 리스트
+
+- Node가 하나의 link field에 의해 다음 Node와 연결되는 구조를 가짐
+- **Head**가 가장 앞의 node를 가리키고, 각 node의 link field가 연속적으로 다음 노드를 가리킴
+- 최종적으로 **None**을 가리키는 node가 list의 가장 *마지막 node*
+
+<br>
+
+### 단순 연결 리스트의 삽입 연산
+
+>  A, C, D를 원소로 갖고 있는 list의 두 번째에 B node를 삽입할 때
+
+1. Memory를 할당하여 새로운 node `new` 생성함
+2. 생성된 node `new`의 data field에 B를 저장
+3. 삽입될 위치의 바로 앞에 위치한 node의 link field를 `new`에 복사
+4. `new`의 주소를 앞 node의 link field에 저장
+
+<br>
+
+#### 첫 번째 node로 삽입하는 알고리즘
+
+```python
+def addtoFirst(data): #첫 node에 data 삽입
+    global Head
+    Head = Node(data, Head) #새로운 node 생성
+```
+
+<br>
+
+#### 가운데 node로 삽입하는 알고리즘
+
+> node `pre`의 다음 위치에 node 삽입
+
+```python
+def add(pre, data): #pre 다음에 data 삽입
+    if pre == None:
+        print('error')
+    else:
+        pre.link = Node(data, pre.link)
+```
+
+<br>
+
+#### 마지막 node로 삽입하는 알고리즘
+
+```python
+def addtoLast(data): #마지막에 data 삽입
+    global Head
+    if Head == None: #빈 list이면
+        Head = Node(data,None) #list의 최초 node로 추가
+    else:
+        p = Head
+        while p.link != Node: #마지막 node 찾을 때까지 (link가 None 일때 까지)
+            p = p.link
+        p.link = Node(data,None)
+```
+
+<br>
+
+<br>
+
+### 단순 연결 리스트의 삭제 연산
 
 
 
