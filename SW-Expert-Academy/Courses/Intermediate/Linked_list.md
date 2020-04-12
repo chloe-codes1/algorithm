@@ -180,6 +180,38 @@ def addtoLast(data): #마지막에 data 삽입
 
 ### 단순 연결 리스트의 삭제 연산
 
+> A, B, C, D list의 B node를 삭제할 때
+
+1. 삭제할 node의 선행 node 탐색
+2. 삭제할 node의 link field를 선행 node의 link field에 복사
+
+<br>
+
+#### 첫 번째 node를 삭제하는 알고리즘
+
+```python
+def deletetoFirst(): #처음 node 삭제
+    global Head
+    if Head == None:
+        print('error!')
+    else:
+        Head = Head.link
+```
+
+<br>
+
+#### Node를 삭제하는 알고리즘
+
+> node `pre`의 다음 위치에 있는 node 삭제
+
+```python
+def delete(pre): #pre 다음 node 삭제
+    if pre == None or pre.link== None:
+        print('error!')
+    else:
+        pre.link = pre.link.link
+```
+
 
 
 <br>
@@ -188,8 +220,27 @@ def addtoLast(data): #마지막에 data 삽입
 
 ## 이중 연결 리스트 (Doubly Linked List)
 
+- 양쪽 방향으로 순회할 수 있도록 node를 연결한 list
+- 두 개의 link field와 한 개의 data field로 구성
+
 <br>
 
 ### 이중 연결 리스트의 삽입 연산
 
-1. 메모리를 할당하여 새로운 노드 `new`를 생성하고 data field `D`를 저장한다
+> `cur`이 가리키는 node 다음에 D 값을 가진 node를 삽입하는 과정
+
+1. 메모리를 할당하여 새로운 노드 `new`를 생성하고 data field `D`를 저장
+2. `cur`의 next를 `new`의 next에 저장하여 `cur`의 다음 node를 삽입할 node의 다음 node로 연결
+3. `new`의 값을 `cur`의 `next`에 저장하여 삽입할 node를 `cur`의 다음 node로 연결
+4. `cur`의 값을 `new`의 prev field에 저장하여 `cur`를 `new`의 이전 node로 연결
+5. `new`의 값을 `new`가 가리키는 node의 다음 node의 prev field에 저장하여 삽입하려는 node의 다음 node와 삽입하려는 node를 연결
+
+<br>
+
+### 이중 연결 리스트의 삭제 연산
+
+> `cur`이 가리키는 node를 삭제하는 과정
+
+1. 삭제할 node의 다음 node의 주소를 삭제할 node의 이전 node의 next field에 저장하여 link를 연결
+2. 삭제할 node의 다음 node의 prev field에 삭제할 node의 이전 node의 주소를 저장하여 link를 연결
+3. `cur`이 가리키는 node에 할당된 memory를 반환
