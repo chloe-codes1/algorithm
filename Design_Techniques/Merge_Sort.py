@@ -16,8 +16,6 @@ def merge(left, right):
     return result
 
 
-
-
 def merge_sort(m):
     if len(m) <= 1: # 배열 크기가 0 이거나 1인 경우 바로 return
         return m
