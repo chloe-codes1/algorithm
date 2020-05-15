@@ -12,5 +12,5 @@ deploy.json
 fabfile.py
 *.swp
 *.swo
-
+.idea
 2020_kakao_Internship
