@@ -54,4 +54,4 @@ while cnt <V:
         if dist[w] > dist[u] + cost:
             dist[w] = dist[u] + cost
     
-print(dist)
+print(dist)                                                                                                       
