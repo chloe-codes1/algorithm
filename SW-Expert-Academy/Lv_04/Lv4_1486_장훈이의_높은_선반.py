@@ -14,6 +14,6 @@ for t in range(1, T+1):
     clerks, height = map(int, input().split())
     tall = list(map(int, input().split()))
     used = [0]*clerks
-    result = 10000000
+    result = float('inf')
     min_diff(0,clerks,0)
     print('#{} {}'.format(t,result-height))
