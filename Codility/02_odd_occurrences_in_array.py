@@ -30,3 +30,15 @@ each element of array A is an integer within the range [1..1,000,000,000];
 all but one of the values in A occur an even number of times.
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
 """
+
+def solution(A):
+    result = dict()
+    for idx, val in enumerate(A):
+        if val not in result.keys():
+            result[val] = [idx]
+        else:
+            result[val].append(idx)
+
+    for key, value in result.items():
+        if len(value) == 1:
+            return key
