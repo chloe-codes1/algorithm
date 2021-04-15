@@ -9,4 +9,9 @@
 ### Lesson 2: Arrays
 - [x] : [Cyclic Rotation](02_cyclic_rotation.py)
 - [x] : [Odd Occurrences in Array](02_odd_occurrences_in_array_1.py) 
+
+
+### Time Complexity
 - [x] : [Frog Jump](03_frog_jump.py)
+- [x] : [Perm Missing Elem](03_perm_missing_elem.py)
+
