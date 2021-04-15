@@ -33,12 +33,13 @@ Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized cop
 
 def solution(A):
     result = dict()
-    for idx, val in enumerate(A):
+    for idx, val in enumerate(sorted(A)):
         if val not in result.keys():
             result[val] = [idx]
         else:
             result[val].append(idx)
 
-    for key, value in result.items():
+    for key, value in sorted(result.items()):
         if len(value) == 1:
             return key
+
