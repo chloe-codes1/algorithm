@@ -14,4 +14,5 @@
 ### Time Complexity
 - [x] : [Frog Jump](03_frog_jump.py)
 - [x] : [Perm Missing Elem](03_perm_missing_elem.py)
+- [x] : [Tape Equilibrium](03_tape_equilibrium.py) 
 
