@@ -11,7 +11,7 @@
 - [x] : [Odd Occurrences in Array](02_odd_occurrences_in_array_1.py) 
 
 
-### Time Complexity
+### Lesson 3: Time Complexity
 - [x] : [Frog Jump](03_frog_jump.py)
 - [x] : [Perm Missing Elem](03_perm_missing_elem.py)
 - [x] : [Tape Equilibrium](03_tape_equilibrium.py) 
