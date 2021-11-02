@@ -1,6 +1,9 @@
+# 효율성 떨어짐
+
 def solution(phone_book):
     answer = True
     count = len(phone_book)
+
     for idx, val in enumerate(phone_book):
         length = len(val)
         for i in range(count):
