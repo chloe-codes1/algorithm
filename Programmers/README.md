@@ -22,6 +22,13 @@
 
 <br>
 
+### [Sorting](/Programmers/sorting)
+
+- [x] [K번째 수](/Programmers/sorting/K번째수.py)
+
+
+<br>
+
 ### [Kakao](/Programmers/kakao)
 
 - [x] [크레인 인형뽑기 게임](/Programmers/kakao/2019_kakao_겨울_인턴십/크레인_인형뽑기_게임.py)
