@@ -25,6 +25,7 @@
 ### [Sorting](/Programmers/sorting)
 
 - [x] [K번째 수](/Programmers/sorting/K번째수.py)
+- [x] [H-Index](/Programmers/sorting/H-Index.py)
 
 
 <br>
