@@ -31,6 +31,11 @@
 
 <br>
 
+### [Brute Force](/Programmers/brute-force)
+
+- [x] [모의고사](/Programmers/brute-force/모의고사_2.py)
+
+
 ### [Kakao](/Programmers/kakao)
 
 - [x] [크레인 인형뽑기 게임](/Programmers/kakao/2019_kakao_겨울_인턴십/크레인_인형뽑기_게임.py)
