@@ -20,6 +20,7 @@
 - [x] 탑
 - [x] 주식가격
 - [x] 쇠막대기
+- [x] [기능개발](/Programmers/stack_queue/기능개발.py) 
 
 <br>
 
@@ -35,6 +36,7 @@
 
 - [x] [모의고사](/Programmers/brute-force/모의고사_2.py)
 
+<br>
 
 ### [Kakao](/Programmers/kakao)
 
