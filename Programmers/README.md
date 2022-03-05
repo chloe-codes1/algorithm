@@ -20,7 +20,8 @@
 - [x] 탑
 - [x] 주식가격
 - [x] 쇠막대기
-- [x] [기능개발](/Programmers/stack_queue/기능개발.py) 
+- [x] [기능개발](/Programmers/stack_queue/기능개발.py)
+- [x] [프린터](/Programmers/stack_queue/프린터_2.py) 
 
 <br>
 
