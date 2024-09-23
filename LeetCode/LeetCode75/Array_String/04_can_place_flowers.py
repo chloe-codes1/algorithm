@@ -42,6 +42,9 @@ class Solution:
                 count += 1
                 flowerbed[i] = 1
 
+                if count == n:
+                    return True
+
         return count >= n
 
 solution = Solution()
