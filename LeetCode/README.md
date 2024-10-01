@@ -18,3 +18,4 @@
 - [x] : [151. Reverse Words in a String](LeetCode75/01_Array_String/06_reverse_words_in_a_string.py)
 - [x] : [238. Product of Array Except Self](LeetCode75/01_Array_String/07_product_of_array_except_self.py)
 - [x] : [334. Increasing Triplet Subsequence](LeetCode75/01_Array_String/08_increasing_triplet_subsequence.py)
+- [x] : [443. String Compression](LeetCode75/01_Array_String/09_string_compression.py)
