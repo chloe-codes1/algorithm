@@ -23,3 +23,4 @@
 ### Two Pointers
 
 - [x] : [283. Move Zeroes](LeetCode75/02_Two_Pointers/01_move_zeros.py)
+- [x] : [392. Is Subsequence](LeetCode75/02_Two_Pointers/02_is_subsequence.py)
