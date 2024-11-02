@@ -25,3 +25,4 @@
 - [x] : [283. Move Zeroes](LeetCode75/02_Two_Pointers/01_move_zeros.py)
 - [x] : [392. Is Subsequence](LeetCode75/02_Two_Pointers/02_is_subsequence.py)
 - [x] : [11. Container With Most Water](LeetCode75/02_Two_Pointers/03_container_with_most_water.py)
+- [x] : [1679. Max Number of K-Sum Pairs](LeetCode75/02_Two_Pointers/04_max_number_of_k-sum_pairs.py)
