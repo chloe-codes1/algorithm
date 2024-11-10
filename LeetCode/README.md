@@ -30,3 +30,7 @@
 ### Sliding Window
 
 - [x] : [643. Maximum Average Subarray I](LeetCode75/03_Sliding_Window/01_maximum_average_subarray_1.py)
+
+### Stack
+
+- [x] : [394. Decode String](LeetCode75/06_Stack/03_decode_string.py)
