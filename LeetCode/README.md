@@ -39,3 +39,7 @@
 
 - [x] : [933. Number of Recent Calls](LeetCode75/07_Queue/01_number_of_recent_calls.py)
 - [x] : [649. Dota2 Senate](LeetCode75/07_Queue/02_dota2_senate.py)
+
+### Linked List
+
+- [x] : [206. Reverse Linked List](LeetCode75/08_Linked_List/03_reverse_linked_list.py)
