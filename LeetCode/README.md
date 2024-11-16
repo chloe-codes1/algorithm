@@ -38,3 +38,4 @@
 ### Queue
 
 - [x] : [933. Number of Recent Calls](LeetCode75/07_Queue/01_number_of_recent_calls.py)
+- [x] : [649. Dota2 Senate](LeetCode75/07_Queue/02_dota2_senate.py)
