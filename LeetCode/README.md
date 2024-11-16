@@ -34,3 +34,7 @@
 ### Stack
 
 - [x] : [394. Decode String](LeetCode75/06_Stack/03_decode_string.py)
+
+### Queue
+
+- [x] : [933. Number of Recent Calls](LeetCode75/07_Queue/01_number_of_recent_calls.py)
