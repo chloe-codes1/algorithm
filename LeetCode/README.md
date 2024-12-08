@@ -45,7 +45,7 @@
 - [x] : [206. Reverse Linked List](LeetCode75/08_Linked_List/03_reverse_linked_list.py)
 - [x] : [2130. Maximum Twin Sum of a Linked List](LeetCode75/08_Linked_List/04_maximum_twin_sum_of_a_linked_list.py)
 
-### DFS
+### Binary Tree - DFS
 
 - [x] : [104. Maximum Depth of Binary Tree](LeetCode75/09_Binary_Tree-DFS/01_maximum_depth_of_binary_tree.py)
 - [x] : [872. Leaf-Similar Trees](LeetCode75/09_Binary_Tree-DFS/02_leaf-similar_trees.py)
