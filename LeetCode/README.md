@@ -47,8 +47,8 @@
 
 ### DFS
 
-- [x] : [104. Maximum Depth of Binary Tree](LeetCode75/09_DFS/01_maximum_depth_of_binary_tree.py)
-- [x] : [872. Leaf-Similar Trees](LeetCode75/09_DFS/02_leaf-similar_trees.py)
+- [x] : [104. Maximum Depth of Binary Tree](LeetCode75/09_Binary_Tree-DFS/01_maximum_depth_of_binary_tree.py)
+- [x] : [872. Leaf-Similar Trees](LeetCode75/09_Binary_Tree-DFS/02_leaf-similar_trees.py)
 
 ### Binary Search Tree
 
