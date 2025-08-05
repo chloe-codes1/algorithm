@@ -37,19 +37,19 @@ from typing import List
 
 
 class Solution:
-    def __init__(self):
-          ...
-
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         options = {}
-
-        for i, num in enumerate(nums):
+        for idx, num in enumerate(nums):
             candidate = target - num
 
             if candidate in options:
-                return [i, options[candidate]]
+                return [options[candidate], idx]
             else:
-                options[num] = i
+                options[num] = idx
+        
+        return []
+
+
 
 
 s = Solution()
